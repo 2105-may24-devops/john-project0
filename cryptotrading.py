@@ -71,7 +71,12 @@ if __name__ == "__main__":
     #data = response.json()
     #print(data["bpi"]["USD"]["rate"])
     while(True):
+    	#getting time to use in functions and log file
     	curtime = time.ctime()
+    	#log file for last time application was run
+    	f = open("logfile.txt", "a")
+    	f.write("Application Run at " + time.strftime('%H:%M%p %Z on %b %d %Y') + "\n" + "\n")
+    	f.close()
     	buyorsell = input("Is this a record of a buy or a sell order? Type 'q' to quit. \n")
     	if buyorsell == "buy":
     		getbuyinformation(curtime)
