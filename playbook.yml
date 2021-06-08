@@ -1,0 +1,13 @@
+---
+
+- name: git clone the repo to get source code
+
+
+  hosts: all
+  tasks:
+    - name:
+      ansible.builtin.git:
+        repo: https://github.com/2105-may24-devops/john-project0.git
+        dest: john-project0
+        single_branch: yes
+        version: main
