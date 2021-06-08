@@ -3,8 +3,8 @@
 - name: uninstall the app
   hosts: all
 
-    tasks:
-      - name: remove directory with app and venv
-        file:
-          path: john-project0
-          state: absent
+  tasks:
+    - name: remove directory with app and venv
+      file:
+        path: john-project0
+        state: absent
