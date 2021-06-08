@@ -1,13 +1,20 @@
 ---
 
-- name: git clone the repo to get source code
+- name: setup and install everything
 
 
   hosts: all
   tasks:
-    - name:
+    - name: clone the git repo first
       ansible.builtin.git:
         repo: https://github.com/2105-may24-devops/john-project0.git
         dest: john-project0
         single_branch: yes
         version: main
+
+    - name: next, install the venv with everything needed to run the program
+      ansible.builtin.shell: python3 -m venv venv
+      args: 
+        chdir: john-project0
+
+    
