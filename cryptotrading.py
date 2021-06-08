@@ -17,13 +17,14 @@ def getbuyinformation(curtime):
 	
 	exchangerate = input("How much USD is 1.0 " + crypto + " currently? \n")
 	
-	notes = input("Any notes on why you are making this buy of " + cryptoamount + " " + crypto + " today? REMEMBER: Don't invest more than you're willing to lose. Never feel guilty, if you feel like you have a problem there is plenty of help out there . Everyone has experiences with loss. Someone spent 10,000 BTC on a pizza when the exchange rate was low. Everything will be ok no matter how the market treats you :) \n")
+	notes = input("Any notes on why you are making this buy of " + cryptoamount + " " + crypto + " today?  \n")
+	#REMEMBER: Don't invest more than you're willing to lose. Never feel guilty, if you feel like you have a problem there is plenty of help out there . Everyone has experiences with loss. Someone spent 10,000 BTC on a pizza when the exchange rate was low. Everything will be ok no matter how the market treats you :)
 	
 
 
 
 	#Write to cryptobuy.txt with the information of the buy
-	f.write("\n" + "\n" + "NEW BUY RECORD" + "\n" + "\n")
+	f.write("NEW BUY RECORD" + "\n" + "\n")
 	f.write(time.strftime('%H:%M%p %Z on %b %d %Y'))
 	f.write("\n")
 	f.write("Bought " + cryptoamount + " " + crypto + "\n")
@@ -47,7 +48,8 @@ def getsellinformation(curtime):
 	
 	exchangerate = input("How much USD is 1.0 " + crypto + " currently? \n")
 	
-	notes = input("Any notes on why you are selling " + cryptoamount + " of your " + crypto + " today? REMEMBER: Hold if you can, but if you need the money, it's ok :) \n")
+	notes = input("Any notes on why you are selling " + cryptoamount + " of your " + crypto + " today? \n")
+	#REMEMBER: Hold if you can, but if you need the money, it's ok :)
 	
 
 
