@@ -8,7 +8,7 @@ def getbuyinformation():
 # # open the file called cryptobuy if not exist create one
 	f = open("cryptobuy.txt", "a")
 	crypto = input("Which Cryptocurrency is being purchased? \n")
-<<<<<<< HEAD
+#<<<<<<< HEAD
 	#print("\n")
 	cryptoamount = input("How Much " + crypto + " did you purchase? \n")
 	#print("\n")
@@ -18,13 +18,13 @@ def getbuyinformation():
 	#print("\n")
 	notes = input("Any notes on why you are making this buy of " + cryptoamount + " " + crypto + " today? REMEMBER: Don't invest more than you're willing to lose. Never feel guilty, if you feel like you have a problem there is plenty of help out there . Everyone has experiences with loss. Someone spent 10,000 BTC on a pizza when the exchange rate was low. Everything will be ok no matter how the market treats you :) \n")
 	#print("\n")
-=======
+#=======
 	cryptoamount = input("How Much " + crypto + " did you purchase?\n ")
 	usdamount = input("How much USD did the " + cryptoamount + "  " + crypto + " cost you in this buy?\n ")
 	exchangerate = input("How much USD is 1.0 " + crypto + " currently? \n")
 	notes = input("Any notes on why you are making this buy of " + cryptoamount + " " + crypto + " today? REMEMBER: Don't invest more than you're willing to lose. Never feel guilty, if you feel like you have a problem there is plenty of help out there . Everyone has experiences with loss. Someone spent 10,000 BTC on a pizza when the exchange rate was low. Everything will be ok no matter how the market treats you :)\n")
 #write to the file what is recording from the user input and format it
->>>>>>> origin/main
+#>>>>>>> origin/main
 	f.write("Bought " + cryptoamount + " " + crypto + "\n")
 	f.write("The purchase of " + cryptoamount + " " + crypto + " cost " + usdamount  + " USD." + "\n")
 	f.write("The Exchange rate at the time of this sale was 1.0 " + crypto + "=" + exchangerate + " USD." + "\n")
@@ -35,7 +35,7 @@ def getbuyinformation():
 def getsellinformation():
 
 	f = open("cryptosell.txt", "a")
-<<<<<<< HEAD
+#<<<<<<< HEAD
 	
 	
 	crypto = input("Which Cryptocurrency is being sold? \n")
@@ -48,14 +48,14 @@ def getsellinformation():
 	#print("\n")
 	notes = input("Any notes on why you are selling " + cryptoamount + "of your " + crypto + " today? REMEMBER: Hold if you can, but if you need the money, it's ok :) \n")
 	#print("\n")
-=======
+#=======
 # open the file called cryptosell if not exist create one
 	crypto = input("Which Cryptocurrency is being sold? \n")
 	cryptoamount = input("How Much " + crypto + " are you selling?\n")
 	usdamount = input("How much USD did you receive from selling your " + cryptoamount + " " + crypto + " " + " in this sell order? \n ")
 	exchangerate = input("How much USD is 1.0 " + crypto + " currently? \n")
 	notes = input("Any notes on why you are selling " + cryptoamount + "of your " + crypto + " today? REMEMBER: Hold if you can, but if you need the money, it's ok :) \n")
->>>>>>> origin/main
+#>>>>>>> origin/main
 	f.write("Sold " + cryptoamount + " " + crypto + "\n")
 	f.write("The sale of " + cryptoamount + " " + crypto + " netted " + usdamount  + " USD." + "\n")
 	f.write("The Exchange rate at the time of this sale was 1.0 " + crypto + "=" + exchangerate + " USD." + "\n")
