@@ -42,7 +42,11 @@
       ansible.builtin.shell: python3 -m venv venv
       args: 
         chdir: john-project0
-        requirements: requirements.txt
+        
+    - name: installing requirements
+      requirements: /john-project0/requirements.txt
+      virtualenv: /john-project0/venv/
+
 
 
 
