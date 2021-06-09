@@ -1,11 +1,11 @@
 import sys
 import time
-#import requests
+import requests
 
 
 
 # Function called for buying cryptocurrency and logging the sale
-def getbuyinformation(curtime):
+def getbuyinformation(curtime, data):
 	#If this is the first recorded buy, create a log file for buy orders. If the program has been used to record buys before, add another entry to this file. It is opened here.
 	f = open("cryptobuy.txt", "a")
 	crypto = input("Which Cryptocurrency is being purchased? \n")
@@ -27,14 +27,16 @@ def getbuyinformation(curtime):
 	f.write("NEW BUY RECORD" + "\n" + "\n")
 	f.write(time.strftime('%H:%M%p %Z on %b %d %Y'))
 	f.write("\n")
+	#Bitcoin price often correlates with the rest of the crypto market, making it relevant and potentially useful information
+	f.write("At time of record, Bitcoin price was " + data + " USD." + "\n")
 	f.write("Bought " + cryptoamount + " " + crypto + "\n")
 	f.write("The purchase of " + cryptoamount + " " + crypto + " cost " + usdamount  + " USD." + "\n")
-	f.write("The Exchange rate at the time of this sale was 1.0 " + crypto + "=" + exchangerate + " USD." + "\n")
-	f.write("Notes: " + notes +"\n" + "\n")
+	f.write("The Exchange rate at the time of this buy was 1.0 " + crypto + " = " + exchangerate + " USD." + "\n")
+	f.write("Notes: " + notes + "\n" + "\n")
 	f.close()
 
 # Function called for selling cryptocurrency and logging the sale
-def getsellinformation(curtime):
+def getsellinformation(curtime, data):
 	#Create a log file for sales if it doesn't exist, or open it and continue writing for it if the program has previously been ran for a sell order
 	f = open("cryptosell.txt", "a")
 
@@ -58,31 +60,43 @@ def getsellinformation(curtime):
 	f.write("NEW SELL RECORD" + "\n" + "\n")
 	f.write(time.strftime('%H:%M%p %Z on %b %d %Y'))
 	f.write("\n")
+	#Bitcoin price often correlates with the rest of the crypto market, making it relevant and potentially useful information
+	f.write("At time of record, Bitcoin price was " + data + " USD." + "\n")
 	f.write("Sold " + cryptoamount + " " + crypto + "\n")
 	f.write("The sale of " + cryptoamount + " " + crypto + " netted " + usdamount  + " USD." + "\n")
-	f.write("The Exchange rate at the time of this sale was 1.0 " + crypto + "=" + exchangerate + " USD." + "\n")
-	f.write("Notes: " + notes+"\n" + "\n")
+	f.write("The Exchange rate at the time of this sale was 1.0 " + crypto + " = " + exchangerate + " USD." + "\n")
+	f.write("Notes: " + notes+ "\n" + "\n")
 	f.close()
 
 
 if __name__ == "__main__":
+	#checking if program is being run in test mode. If it is, then the bitcoin price and time will be set to a default value so it can be compared.
     
-    #response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
-    #data = response.json()
-    #print(data["bpi"]["USD"]["rate"])
-    while(True):
+    if len(sys.argv) > 0:
+    	curtime = "testtime"
+    	data = "testprice"
+    #otherwise, the current time will be retrieved along with the current bitcoin price.
+    else:
     	#getting time to use in functions and log file
     	curtime = time.ctime()
+    	#getting current bitcoin price
+    	response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+    	data = response.json()["bpi"]["USD"]["rate"]
     	#log file for last time application was run
     	f = open("logfile.txt", "a")
     	f.write("Application Run at " + time.strftime('%H:%M%p %Z on %b %d %Y') + "\n" + "\n")
     	f.close()
+    
+    #print(data["bpi"]["USD"]["rate"])
+
+    #loop for interactive user input until terminated.
+    while(True):
     	buyorsell = input("Is this a record of a buy or a sell order? Type 'q' to quit. \n")
     	if buyorsell == "buy":
-    		getbuyinformation(curtime)
+    		getbuyinformation(curtime, data)
     		continue
     	elif buyorsell == "sell":
-    		getsellinformation(curtime)
+    		getsellinformation(curtime, data)
     		continue
     	elif buyorsell == "q":
     		break
