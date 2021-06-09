@@ -25,7 +25,7 @@ def getbuyinformation(curtime, data):
 
 	#Write to cryptobuy.txt with the information of the buy
 	f.write("NEW BUY RECORD" + "\n" + "\n")
-	f.write(time.strftime('%H:%M%p %Z on %b %d %Y'))
+	f.write(curtime)
 	f.write("\n")
 	#Bitcoin price often correlates with the rest of the crypto market, making it relevant and potentially useful information
 	f.write("At time of record, Bitcoin price was " + data + " USD." + "\n")
@@ -58,7 +58,7 @@ def getsellinformation(curtime, data):
 
 	#Write to cryptosell.txt with information of this sell order
 	f.write("NEW SELL RECORD" + "\n" + "\n")
-	f.write(time.strftime('%H:%M%p %Z on %b %d %Y'))
+	f.write(curtime)
 	f.write("\n")
 	#Bitcoin price often correlates with the rest of the crypto market, making it relevant and potentially useful information
 	f.write("At time of record, Bitcoin price was " + data + " USD." + "\n")
@@ -72,13 +72,13 @@ def getsellinformation(curtime, data):
 if __name__ == "__main__":
 	#checking if program is being run in test mode. If it is, then the bitcoin price and time will be set to a default value so it can be compared.
     
-    if len(sys.argv) > 0:
+    if len(sys.argv) > 1:
     	curtime = "testtime"
     	data = "testprice"
     #otherwise, the current time will be retrieved along with the current bitcoin price.
     else:
     	#getting time to use in functions and log file
-    	curtime = time.ctime()
+    	curtime = time.strftime('%H:%M%p %Z on %b %d %Y')
     	#getting current bitcoin price
     	response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
     	data = response.json()["bpi"]["USD"]["rate"]
