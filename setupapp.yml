@@ -1,22 +1,22 @@
 ---
 
--name: install necessities(git, python3, venv, and pip)
+- name: install necessities(git, python3, venv, and pip)
   hosts: all
   become: yes
   tasks:
-    -name: install git
+    - name: install git
       ansible.builtin.package:
         name: git
         state: latest
-    -name: install python3
+    - name: install python3
       ansible.builtin.package:
         name: python3
         state: latest
-    -name: install python3-venv
+    - name: install python3-venv
       ansible.builtin.package:
         name: python3-venv
         state: latest
-    -name: install pip
+    - name: install pip
       ansible.builtin.package:
         name: pip
         state: latest
