@@ -42,9 +42,6 @@
       ansible.builtin.shell: python3 -m venv venv
       args: 
         chdir: john-project0
-
-    - name: install requirements
-      pip:
         requirements: requirements.txt
 
 
