@@ -4,7 +4,7 @@
 
    main () {
 
-   	cat testin.txt | ./venv/bin/python3 -m cryptotrading test
+   	cat testin.txt | ./venv/bin/python3 cryptotrading.py test
 
    	if cmp cryptobuy.txt expected_buy.txt; then
    		echo "Outputted cryptobuy.txt matches expected_buy.txt, the correct outputs for this list of inputs."
