@@ -1,0 +1,7 @@
+---
+
+- name: Run test bash script
+  hosts: all
+  tasks:
+    - name: run the cryptos_tests shell script file
+      ansible.builtin.shell: bash cryptos_tests.sh
