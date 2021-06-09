@@ -44,8 +44,9 @@
         chdir: john-project0
         
     - name: installing requirements
-      requirements: /john-project0/requirements.txt
-      virtualenv: /john-project0/venv/
+      pip:
+        requirements: /john-project0/requirements.txt
+        virtualenv: /john-project0/venv/
 
 
 
