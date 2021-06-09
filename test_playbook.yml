@@ -4,6 +4,6 @@
   hosts: all
   tasks:
     - name: run the cryptos_tests shell script file
-        ansible.builtin.shell: bash cryptos_tests.sh
-        args: 
-          chdir: /home/john/john-project0/
+      ansible.builtin.shell: bash cryptos_tests.sh
+      args: 
+        chdir: /home/john/john-project0/
