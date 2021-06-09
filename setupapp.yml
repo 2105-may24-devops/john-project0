@@ -45,8 +45,9 @@
         
     - name: installing requirements
       pip:
-        requirements: /john-project0/requirements.txt
         virtualenv: /john-project0/venv/
+        requirements: /john-project0/requirements.txt
+        
 
 
 
