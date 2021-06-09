@@ -1,0 +1,9 @@
+NEW BUY RECORD
+
+testtime
+At time of record, Bitcoin price was testprice USD.
+Bought 2 Bitcoin
+The purchase of 2 Bitcoin cost 80,000 USD.
+The Exchange rate at the time of this buy was 1.0 Bitcoin = 40,000 USD.
+Notes: I wanted to buy at this price.
+

@@ -1,0 +1,13 @@
+buy
+Bitcoin
+2
+80,000
+40,000
+I wanted to buy at this price.
+sell
+Bitcoin
+3
+150,000
+50,000
+I wanted to sell once it reached this price.
+q

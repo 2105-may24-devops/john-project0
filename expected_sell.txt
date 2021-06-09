@@ -1,0 +1,9 @@
+NEW SELL RECORD
+
+testtime
+At time of record, Bitcoin price was testprice USD.
+Sold 3 Bitcoin
+The sale of 3 Bitcoin netted 150,000 USD.
+The Exchange rate at the time of this sale was 1.0 Bitcoin = 50,000 USD.
+Notes: I wanted to sell once it reached this price.
+
