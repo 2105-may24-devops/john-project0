@@ -4,4 +4,4 @@
   hosts: all
   tasks:
     - name: run the cryptos_tests shell script file
-      ansible.builtin.shell: echo bash /home/john/john-project0/cryptos_tests.sh
+      ansible.builtin.shell: bash /home/john/john-project0/cryptos_tests.sh
