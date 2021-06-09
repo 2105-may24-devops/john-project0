@@ -1,9 +1,11 @@
 ---
 
 - name: Run test bash script
-  hosts: active
+  hosts: all
   tasks:
     - name: run the cryptos_tests shell script file
-      ansible.builtin.shell: bash cryptos_tests.sh
+      script: cryptos_tests.sh
+      register: testresults
       args: 
         chdir: /home/john/john-project0/
+    - debug: var=testresults.stdout_lines
