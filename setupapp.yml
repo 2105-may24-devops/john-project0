@@ -1,6 +1,32 @@
 ---
 
-- name: setup and install everything
+-name: install necessities(git, python3, venv, and pip)
+  hosts: all
+  become: yes
+  tasks:
+    -name: install git
+      ansible.builtin.package:
+        name: git
+        state: latest
+    -name: install python3
+      ansible.builtin.package:
+        name: python3
+        state: latest
+    -name: install python3-venv
+      ansible.builtin.package:
+        name: python3-venv
+        state: latest
+    -name: install pip
+      ansible.builtin.package:
+        name: pip
+        state: latest
+
+
+
+
+
+
+- name: get code from git repo, set up venv, install requirements
 
 
   hosts: all
@@ -12,9 +38,15 @@
         single_branch: yes
         version: main
 
-    - name: next, install the venv with everything needed to run the program
+    - name: next, set up the venv with everything needed to run the program
       ansible.builtin.shell: python3 -m venv venv
       args: 
         chdir: john-project0
+
+    - name: install requirements
+      pip:
+        requirements: requirements.txt
+
+
 
     
