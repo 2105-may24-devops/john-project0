@@ -41,12 +41,13 @@
     - name: next, set up the venv with everything needed to run the program
       ansible.builtin.shell: python3 -m venv venv
       args: 
-        chdir: john-project0
+        chdir: /home/john/john-project0/
         
     - name: installing requirements
       pip:
-        virtualenv: /john-project0/venv/
-        requirements: /john-project0/requirements.txt
+        requirements: /home/john/john-project0/requirements.txt
+        virtualenv: /home/john/john-project0/venv
+        
         
 
 
