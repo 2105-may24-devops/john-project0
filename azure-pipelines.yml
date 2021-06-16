@@ -54,4 +54,4 @@ steps:
     playbookPathOnAgentMachine: 'setupapp.yml'
     inventoriesAgentMachine: 'file'
     inventoryFileOnAgentMachine: 'inventory.yml'
-  displayName: 'Ansible--> Ensure Python 3.9'
+  #displayName: 'Ansible--> Ensure Python 3.9'
