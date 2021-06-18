@@ -30,11 +30,11 @@ steps:
     organization: '2105-may24-devops'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: '5b1444ba1f04e925388c20d014fc657c9d190b82'
+    cliProjectKey: '2105-may24-devops_john-project0'
     cliProjectName: 'john-project0'
     cliSources: '.'
 
--k:{5b1444ba1f04e925388c20d014fc657c9d190b82}
+
 
 - task: SonarCloudAnalyze@1
 
