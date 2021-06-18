@@ -29,7 +29,10 @@ steps:
     SonarCloud: 'sonarcloud-drake'
     organization: '2105-may24-devops'
     scannerMode: 'CLI'
-    configMode: 'file'
+    configMode: 'manual'
+    cliProjectKey: '5b1444ba1f04e925388c20d014fc657c9d190b82'
+    cliProjectName: 'john-project0'
+    cliSources: '.'
 
 - task: SonarCloudAnalyze@1
 
