@@ -34,6 +34,8 @@ steps:
     cliProjectName: 'john-project0'
     cliSources: '.'
 
+-k:{5b1444ba1f04e925388c20d014fc657c9d190b82}
+
 - task: SonarCloudAnalyze@1
 
 - task: InstallSSHKey@0
